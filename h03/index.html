@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+        body{
+            font-family: Copse, serif;
+            text-align: center;
+        }
+        img{
+            height: 300px;
+            width: 300px;
+            border: 0px;
+        }
+        #pics{
+            width: 900px;
+            height: 900px;
+            border: 1px solid black;
+            font-size: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Dog shuffle</h1>
+<div id="pics">
+    <img src="img/dog1.jpg">
+    <img src="img/dog2.jpg">
+    <img src="img/dog3.jpg">
+    <img src="img/dog4.jpg">
+    <img src="img/dog5.jpg">
+    <img src="img/dog6.jpg">
+    <img src="img/dog7.jpg">
+    <img src="img/dog8.jpg">
+    <img src="img/dog9.jpg">
+</div>
+<script>
+    var plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+
+    var randomnumbers = [];
+
+    while (randomnumbers.length < 9){
+        random = math.floor(math.random() * 9)+ 1;
+        if (randomnumbers.lastIndexOf(random) == -1){
+            randomnumbers.push(random);
+        }
+    }
+
+
+    random = 0;
+    for (var plaatje in plaatjes){
+        random = math.floor(math.random()* 9) + 1;
+        plaatjes[plaatjes].src = "img/dog" + randomnumbers[random] + ".jpg";
+        random++
+    }
+</script>
+</body>
+</html>
