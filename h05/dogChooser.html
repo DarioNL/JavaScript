@@ -11,7 +11,7 @@
             text-align: center;
         }
 
-        div.pictureHolder{
+        div.colorpicture{
             box-sizing: border-box;
             height: 450px;
             width: 300px;
@@ -47,39 +47,46 @@
 </div>
 <script>
     pics = document.getElementById("pics");
-    createholders();
+    createHolders();
     createDogImage();
-    
-    function createholders() {
-        for (var i = 0; i < 9; i++) {
+
+    function createHolders() {
+        for(var i = 0; i < 9; i++) {
             pictureHolder = document.createElement("div");
-            pictureHolder.className = "pictureHolder";
+            pictureHolder.className = "colorpicture";
             pictureHolder.id = "picture-holder-" + i;
             pics.appendChild(pictureHolder);
         }
     }
 
-    function createDogImage() {
-        pictureHolder = document.getElementsByClassName("pictureHolder");
-        for (var i = 0; i < 9; i++) {
+    function createDogImage(){
+        pictureHolders = document.getElementsByClassName("colorpicture");
+        for (var i = 0; i < pictureHolders.length; i++) {
             favoriet = document.createElement("div");
             favoriet.className = "favoriet";
-            dogplaatje = document.createElement("img");
-            dogplaatje.id = "favoriet_" + (i+1);
-            dogplaatje.src = "img/dog" + (i+1) + ".jpg";
-            dogplaatje.addEventListener("click", function () {
-                maakfavoriet(this.id)
+            favoriet.id = "favoriet_" + (i + 1);
+            kleurAfbeelding = document.createElement("img");
+            kleurAfbeelding.src = "img/dog" + (i + 1) + ".jpg";
+            kleurAfbeelding.id = (i + 1);
+            kleurAfbeelding.addEventListener("click", function () {
+                maakFavoriet(this.id);
             });
-            pictureHolder[i].appendChild(favoriet);
-            pictureHolder[i].appendChild(dogplaatje);
+            pictureHolders[i].appendChild(favoriet);
+            pictureHolders[i].appendChild(kleurAfbeelding);
         }
     }
 
-    function maakfavoriet(id) {
-        console.log("Maak mij favoriet! Het gaat om hond...... " + id);
-        favoriet = document.getElementById("favoriet_" + id);
+    function maakFavoriet(id) {
+        console.log("Maak mij Favoriet!" + id );
+        nietFavoriet = document.getElementsByClassName("favoriet");
+
+        for(var i = 0; i < nietFavoriet.length; i++) {
+            nietFavoriet[i].style.backgroundImage = "none";
+        }
+        favoriet= document.getElementById("favoriet_" + id);
         favoriet.style.backgroundImage = "url('img/hart.png')";
     }
+    pics = document.getElementById("pics");
 
     //picholders maken
     // plaat van een hond en een favorite symbool
