@@ -2,70 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CrookApp</title>
     <style>
-        #slideholder{
-            height: 300px;
-            width: 300px;
+        #slideholderogen {
+            height: 200px;
+            width: 350px;
+            transition: 2s;
+        }
+        #slideholderneus {
+            height: 200px;
+            width: 350px;
+            transition: 2s;
+        }
+        #slideholdermond {
+            height: 200px;
+            width: 350px;
+            transition: 2s;
         }
     </style>
 </head>
 <body>
-<div id="slideholder"></div>
-<script>
-    var plaatjesmond = [1,2,3];
-    var plaatjesneus = [1,2,3];
-    var plaatjesoog = [1,2,3];
-    var teller = 0;
-    var slideholders= document.getElementById("slideholder");
-    slideholders.style.backgroundImage = "url('img/mond1.png')";
-    slideholders.style.backgroundImage = "url('img/neus1.png')";
-    slideholders.style.backgroundImage = "url('img/oog1.png')";
-
-    slideholders.addEventListener("click", function () {
-        getdog();
-       slideholders.style.backgroundImage = "url('img/mond" + getmond() + ".jpg')"
-    });
-
-    slideholders.addEventListener("click", function () {
-        getdog();
-        slideholders.style.backgroundImage = "url('img/neus" + getneus() + ".jpg')"
-    });
-
-    slideholders.addEventListener("click", function () {
-        getdog();
-        slideholders.style.backgroundImage = "url('img/oog" + getoog() + ".jpg')"
-    });
-    
-    function getmond() {
-        if (teller >= plaatjesmond.length){
-            teller = 1;
-        }else {
-            teller++;
-        }
-        console.log(teller);
-        return teller;
-    }
-
-    function getneus() {
-        if (teller >= plaatjesneus.length){
-            teller = 1;
-        }else {
-            teller++;
-        }
-        console.log(teller);
-        return teller;
-    }
-
-    function getoog() {
-        if (teller >= plaatjesoog.length){
-            teller = 1;
-        }else {
-            teller++;
-        }
-        console.log(teller);
-        return teller;
-    }
-</script>
+<div id="slideholderogen"></div>
+<div id="slideholderneus"></div>
+<div id="slideholdermond"></div>
+<script src="Crookapp.js"></script>
 </body>
 </html>
