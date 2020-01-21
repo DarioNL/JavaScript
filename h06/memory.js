@@ -14,7 +14,7 @@ function createDogImage(i) {
     picture.className = "selection";
     picture.style.border = "3px solid black";
     picture.addEventListener("click", function () {
-        picture.style.border = "3px red solid";
+        picture.style.borderv = "3px solid black";
         picture.src = "img/dog" + i + ".jpg";
         if (selectedpictures.length < 2) {
             selectedpictures.push(picture)

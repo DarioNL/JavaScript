@@ -1,10 +1,10 @@
 var slideholdermond = document.getElementById("slideholdermond");
-slideholdermond.style.backgroundImage = "url('img/mond1.jpg')";
+slideholdermond.style.backgroundImage = "url('img/crookapp/mond1.jpg')";
 var tellermond = 1;
 
 
 slideholdermond.addEventListener("click", function () {
-    slideholdermond.style.backgroundImage = "url('img/mond" + volgendeAfbeeldingmond() + ".jpg')";
+    slideholdermond.style.backgroundImage = "url('img/crookapp/mond" + volgendeAfbeeldingmond() + ".jpg')";
 });
 
 function volgendeAfbeeldingmond() {
@@ -18,12 +18,12 @@ function volgendeAfbeeldingmond() {
 
 
 var slideholderneus = document.getElementById("slideholderneus");
-slideholderneus.style.backgroundImage = "url('img/neus1.jpg')";
+slideholderneus.style.backgroundImage = "url('img/crookapp/neus1.jpg')";
 var tellerneus = 1;
 
 
 slideholderneus.addEventListener("click", function () {
-    slideholderneus.style.backgroundImage = "url('img/neus" + volgendeAfbeeldingneus() + ".jpg')";
+    slideholderneus.style.backgroundImage = "url('img/crookapp/neus" + volgendeAfbeeldingneus() + ".jpg')";
 });
 
 function volgendeAfbeeldingneus() {
@@ -38,12 +38,12 @@ function volgendeAfbeeldingneus() {
 
 
 var slideholderogen = document.getElementById("slideholderogen");
-slideholderogen.style.backgroundImage = "url('img/oog1.jpg')";
+slideholderogen.style.backgroundImage = "url('img/crookapp/hoofd1.jpg')";
 var tellerogen = 1;
 
 
 slideholderogen.addEventListener("click", function () {
-    slideholderogen.style.backgroundImage = "url('img/oog" + volgendeAfbeeldingogen() + ".jpg')";
+    slideholderogen.style.backgroundImage = "url('img/crookapp/hoofd" + volgendeAfbeeldingogen() + ".jpg')";
 });
 
 function volgendeAfbeeldingogen() {
