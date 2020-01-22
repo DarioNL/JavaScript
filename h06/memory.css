@@ -71,3 +71,11 @@ div.spelers {
     background-color: yellow;
     text-align: center;
 }
+div#klok{
+    width: fit-content;
+    height: auto;
+    color: red;
+    text-align: center;
+    background-color: darkgray;
+    border: 1px solid black;
+}
