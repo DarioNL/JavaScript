@@ -79,3 +79,10 @@ div#klok{
     background-color: darkgray;
     border: 1px solid black;
 }
+#kaarten{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
