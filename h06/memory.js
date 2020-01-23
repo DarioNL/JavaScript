@@ -1,6 +1,5 @@
-var kaarten =document.getElementById("kaart");
+var kaarten =document.getElementById("kaarten");
 createHolders();
-createDogImage();
 
 var speler1beurt = true;
 
@@ -11,64 +10,17 @@ var speler2score = 0;
 var selectedpictures = [];
 
 function createHolders() {
-    for(var i = 0; i < 18; i++) {
+    var dogArray = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9];
+
+    for(var i = 0 ; i < dogArray.length ; i++) {
+        console.log("Stapje " + i);
         pictureHolder = document.createElement("div");
-        pictureHolder.className = "kaarten";
-        pictureHolder.id = "kaarten-holder-" + i;
+        pictureHolder.style.width = "100px";
+        pictureHolder.style.height = "100px";
+        pictureHolder.className = "kaarten-holder" + dogArray[i];
+        pictureHolder.id = "kaart" + i;
+        if(i === 6) pictureHolder.innerHTML = "<br>";
         kaarten.appendChild(pictureHolder);
+        pictureHolder.style.backgroundImage = 'url("img/dog' + dogArray[i] + '.jpg")';
     }
 }
-
-function createDogImage(){
-    pictureHolders = document.getElementsByClassName("kaarten");
-    for (var i = 0; i < pictureHolders.length; i++) {
-        var correctie;
-        favoriet = document.createElement("div");
-        if (i < 9) {
-            correctie = 0;
-            kleurAfbeelding = document.createElement("img");
-            kleurAfbeelding.src = "img/dog" + (i + 1 - correctie) + ".jpg";
-            kleurAfbeelding.className = (i + 1 - correctie);
-            kleurAfbeelding.addEventListener("click", function () {
-                maakFavoriet(this.id);
-            });
-            pictureHolders[i].appendChild(favoriet);
-            pictureHolders[i].appendChild(kleurAfbeelding);
-        }else{
-            correctie = 9;
-            kleurAfbeelding = document.createElement("img");
-            kleurAfbeelding.src = "img/dog" + (i + 1 - correctie) + ".jpg";
-            kleurAfbeelding.className = (i + 1 - correctie);
-            kleurAfbeelding.addEventListener("click", function () {
-                maakFavoriet(this.id);
-            });
-            pictureHolders[i].appendChild(favoriet);
-            pictureHolders[i].appendChild(kleurAfbeelding);
-        }
-
-    }
-}
-
-
-
-function createDogArray() {
-}
-
-function occurencesInArray(arr, str, i) {
-
-}
-
-function checkMatch() {
-
-}
-
-function checkWin() {
-
-}
-
-function clear() {
-
-}
-
-var mijnhonden = createDogArray();
-
