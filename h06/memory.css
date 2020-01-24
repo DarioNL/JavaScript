@@ -85,4 +85,9 @@ div#klok{
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
+    width: 800px;
+    height: 380px;
+    background-color: #716F71;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
