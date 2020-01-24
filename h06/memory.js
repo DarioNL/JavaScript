@@ -9,6 +9,7 @@ var speler2score = 0;
 
 var selectedpictures = [];
 
+
 function createHolders() {
     var dogArray = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9];
     var shuffledDogArray = shuffleDogArray(dogArray);
@@ -20,8 +21,15 @@ function createHolders() {
         pictureHolder.style.height = "100px";
         pictureHolder.className = "kaarten-holder" + shuffledDogArray[i];
         pictureHolder.id = "kaart" + shuffledDogArray[i];
+        pictureHolder.addEventListener("click", function () {
+            selectedpictures.push(this);
+            if (selectedpictures < 3) {
+                this.style.backgroundImage = 'url("img/background.jpg")';
+            }
+        });
         kaarten.appendChild(pictureHolder);
-        pictureHolder.style.backgroundImage = 'url("img/dog' + dogArray[i] + '.jpg")';
+            pictureHolder.style.backgroundImage = 'url("img/dog' + dogArray[i] + '.jpg")';
+
     }
 }
 
