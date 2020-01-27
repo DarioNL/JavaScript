@@ -91,3 +91,17 @@ div#klok{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+#next-knop{
+    visibility: hidden;
+    position: fixed;
+    left: 50%;
+    top: 85%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    background-color: #4CAF50;
+    font-family: sans-serif, Arial;
+    border: 1px solid black;
+}
+#next-knop:hover{
+    background-color: green;
+}
