@@ -72,10 +72,12 @@ div.spelers {
     text-align: center;
 }
 div#klok{
+    position: fixed;
+    left: 40%;
+    transform: translateX(50%);
     width: fit-content;
     height: auto;
     color: red;
-    text-align: center;
     background-color: darkgray;
     border: 1px solid black;
 }
@@ -104,4 +106,16 @@ div#klok{
 }
 #next-knop:hover{
     background-color: green;
+}
+#gewonnen{
+    visibility: hidden;
+    position: fixed;
+    left: 50%;
+    top: 85%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    background-color: yellow;
+    font-family: sans-serif, Arial;
+    border: 1px solid black;
+
 }
