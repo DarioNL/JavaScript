@@ -20,7 +20,7 @@ var selectedpictures = [];
 
 var correctlychosenpictures = [];
 
-
+gewonen = false;
 
 
 function startTimer() {
@@ -35,7 +35,12 @@ function startTimer() {
     secondeintervalinterval = setInterval(function () {
         console.log("timer werkt");
         document.getElementById("klok").innerHTML = minutes + " mins " + seconds + " secs";
+        if (gewonen !== true){
         seconds++;
+        }else {
+            var t = document.createTextNode(minutes + " mins " + seconds + " secs");
+            gewonen.appendChild(t);
+        }
         if (seconds === 60) {
             minutes++;
             seconds = 0;
@@ -44,7 +49,8 @@ function startTimer() {
             hours++;
             minutes = 0;
         }
-    }, 1000);}
+    }, 1000);
+}
 
 function createScore() {
     console.log("test");
@@ -123,7 +129,7 @@ function checkMatch() {
 function nextTurn() {
     if (speler1beurt === true) {
         if (match === true) {
-            speler1beurt = false;
+            speler1beurt = true;
             console.log("ik werk 1");
             selectedpictures = [];
             selectedelements = [];
@@ -148,7 +154,7 @@ function nextTurn() {
         }
     }else {
         if (match === true) {
-            speler1beurt = true;
+            speler1beurt = false;
             createBeurt();
             console.log("ik werk 1");
             selectedpictures = [];
@@ -178,17 +184,20 @@ function nextTurn() {
 
 function checkWin() {
     if (speler1score + speler2score === 9){
-        console.log("gewonen");
+        gewonen = true;
+        console.log(gewonen);
         win()
     }
 }
 
 function win() {
     winner = document.getElementById("gewonnen");
+    if (gewonen === true){
     winner.style.visibility = 'visible';
+    }
     if (speler1score > speler2score){
     winner.innerHTML = "Speler1 heeft gewonnen " +
-        "het spel duurde";
+        "het spel duurde" + secondeintervalinterval;
     }else {
         winner.innerHTML = "Speler2 heeft gewonnen " +
             "het spel duurde";
